@@ -1,0 +1,48 @@
+.viewItems {
+  // width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  // border: 1px solid black;
+  .head {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  table {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 20px;
+    // text-align: left;
+  }
+  .add {
+    display: flex;
+    justify-content: flex-end;
+    .addLink {
+      text-decoration: none;
+      color: white;
+      background-color: #003366;
+      padding: 8px 15px;
+      text-align: end;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .viewItems {
+    width: 90%;
+    margin-top: 70px;
+    overflow: auto;
+    table,
+    th,
+    td {
+      padding: 10px;
+    }
+  }
+}

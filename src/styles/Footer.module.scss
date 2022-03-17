@@ -1,0 +1,32 @@
+.footer {
+  background-color: #003366;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin-top: auto;
+  p {
+    color: white;
+  }
+  .socialIcons {
+    display: flex;
+    gap: 20px;
+    .icon {
+      font-size: 25px;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        color: tomato;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+    p {
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+  }
+}

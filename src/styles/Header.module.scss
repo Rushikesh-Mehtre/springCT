@@ -1,0 +1,80 @@
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #003366;
+  position: relative;
+
+  .logoBox {
+    .logo {
+      font-weight: 700;
+    }
+    .hamMenu {
+      display: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+    &:hover {
+      color: tomato;
+    }
+  }
+  .menuItems {
+    display: flex;
+    gap: 20px;
+  }
+  // .add,
+  // .view {
+  //   display: none;
+  // }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0px;
+    .logoBox {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .hamMenu {
+        display: block;
+        // position: absolute;
+        top: 20px;
+        right: 20px;
+        .ham {
+          font-size: 28px;
+          cursor: pointer;
+          color: white;
+        }
+        .cross {
+          color: white;
+          cursor: pointer;
+          font-size: 22px;
+          position: relative;
+          right: 2px;
+          top: 2px;
+        }
+      }
+    }
+
+    .menuItems {
+      flex-direction: column;
+      a {
+        text-align: left;
+      }
+    }
+    .add,
+    .view {
+      display: block;
+    }
+  }
+}
