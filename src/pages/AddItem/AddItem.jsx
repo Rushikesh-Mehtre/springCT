@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 const AddItem = (props) => {
   const [userArray, setUserArray] = useState([]);
   const [userData, setUserData] = useState({
-    sr: 1,
     name: "",
     email: "",
     mobile: "",
@@ -75,7 +74,6 @@ const AddItem = (props) => {
       }).showToast();
       return;
     } else {
-      setUserData({ ...userData, sr: userData.sr + 1 });
       setUserArray([...userArray, userData]);
       console.log(userArray);
       console.log(userData);

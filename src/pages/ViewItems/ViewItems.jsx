@@ -29,7 +29,7 @@ const ViewItems = (props) => {
             props.userData.map((item, index) => {
               return (
                 <tr key={index}>
-                  <td>{item.sr}</td>
+                  <td>{index + 1}</td>
                   <td>{item.name}</td>
                   <td>{item.email}</td>
                   <td>{item.mobile}</td>
