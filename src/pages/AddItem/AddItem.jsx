@@ -5,9 +5,6 @@ import "toastify-js/src/toastify.css";
 import "react-toastify/dist/ReactToastify.css";
 const AddItem = (props) => {
   const [userArray, setUserArray] = useState([]);
-  console.log(userArray);
-  props.onClick(userArray);
-
   const [userData, setUserData] = useState({
     sr: 1,
     name: "",
@@ -17,17 +14,57 @@ const AddItem = (props) => {
     puneLocation: false,
     message: "",
   });
+  //eslint-disable-next-line
+  var namePattern = /^[A-Za-z]+$/;
+  //eslint-disable-next-line
+  var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   const submitHandler = () => {
     if (
       !userData.name ||
       !userData.email ||
       !userData.mobile ||
       !userData.workex ||
-      !userData.puneLocation ||
       !userData.message
     ) {
       Toastify({
         text: "Please fill all the details.",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#993612",
+        stopOnFocus: true,
+      }).showToast();
+      return;
+    } else if (!userData.name.match(namePattern)) {
+      Toastify({
+        text: "Name should contain only text characters",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#993612",
+        stopOnFocus: true,
+      }).showToast();
+      return;
+    } else if (!userData.email.match(emailPattern)) {
+      Toastify({
+        text: "Please enter valid email id",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#993612",
+        stopOnFocus: true,
+      }).showToast();
+      return;
+    } else if (userData.mobile.length < 10) {
+      Toastify({
+        text: "Mobile number should contain 10 digits",
         duration: 3000,
         newWindow: true,
         close: false,
@@ -42,8 +79,8 @@ const AddItem = (props) => {
       setUserArray([...userArray, userData]);
       console.log(userArray);
       console.log(userData);
+      props.onClick(userData);
 
-      localStorage.setItem("users", JSON.stringify(userArray));
       Toastify({
         text: "New user information added.",
         duration: 3000,
@@ -73,6 +110,7 @@ const AddItem = (props) => {
         <input
           type="text"
           placeholder="Enter your name"
+          pattern="/^[A-Za-z]+$/"
           value={userData.name}
           onChange={(e) => {
             setUserData({ ...userData, name: e.target.value });

@@ -2,18 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ViewItem.module.scss";
 const ViewItems = (props) => {
-  // const [userData, setUserData] = useState();
-  const users = JSON.parse(localStorage.getItem("users") || "[]");
-  console.log(users);
-  console.log(props.userData);
-  //   setUserData(props.userData);
   const headerArray = [
-    "Sr.No.",
+    "Sr. No.",
     "Name",
     "Email",
     "Mobile Number",
     "Work Experience",
-    "Located in Pune",
+    "Located in Pune ? ",
     "Message",
   ];
   return (
@@ -23,17 +18,17 @@ const ViewItems = (props) => {
         {props.userData && (
           <thead>
             <tr>
-              {headerArray.map((item) => {
-                return <th>{item}</th>;
+              {headerArray.map((item, index) => {
+                return <th key={index}>{item}</th>;
               })}
             </tr>
           </thead>
         )}
         <tbody>
           {props.userData &&
-            props.userData.map((item) => {
+            props.userData.map((item, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>{item.sr}</td>
                   <td>{item.name}</td>
                   <td>{item.email}</td>

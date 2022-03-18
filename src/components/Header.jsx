@@ -11,7 +11,6 @@ const Header = () => {
     }
   };
   let mql = window.matchMedia("(max-width:500px)");
-
   useEffect(() => {
     if (mql.matches) {
       SetMenuShown(false);
@@ -26,7 +25,8 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.logoBox}>
         <Link to="/" className={styles.logo} onClick={logoClickHandler}>
-          SpringCT
+          <span className={styles.first}>Spring</span>{" "}
+          <span className={styles.second}>CT</span>
         </Link>
         <div className={styles.hamMenu}>
           {menuShown === false ? (

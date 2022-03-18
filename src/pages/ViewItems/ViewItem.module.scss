@@ -1,13 +1,12 @@
 .viewItems {
-  // width: 70%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 90%;
-  // border: 1px solid black;
+  overflow: auto;
   .head {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
   }
   table {
     margin: auto;
@@ -20,7 +19,6 @@
     border: 1px solid black;
     border-collapse: collapse;
     padding: 10px 20px;
-    // text-align: left;
   }
   .add {
     display: flex;
@@ -38,7 +36,6 @@
   .viewItems {
     width: 90%;
     margin-top: 70px;
-    overflow: auto;
     table,
     th,
     td {

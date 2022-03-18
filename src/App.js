@@ -6,28 +6,24 @@ import Footer from "./components/Footer";
 import About from "./pages/About/About";
 import Services from "./pages/Services/Services";
 import ViewItems from "./pages/ViewItems/ViewItems";
-import { useState } from "react";
 function App() {
-  const [userData, setUserData] = useState();
+  let newArr = [];
   const addItemHanlder = (data) => {
-    setUserData(data);
+    console.log(data);
+    newArr.push(data);
   };
-  console.log(userData);
+  console.log(newArr);
 
   return (
     <div className="App">
-      {/* <BrowserRouter> */}
       <Header />
-      {/* {location.pathname == "/" ? <LeftNav /> : null}
-      <LeftNav /> */}
       <Routes>
         <Route path="/" element={<AddItem onClick={addItemHanlder} />} />
-        <Route path="/viewitems" element={<ViewItems userData={userData} />} />
+        <Route path="/viewitems" element={<ViewItems userData={newArr} />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
-      {/* </BrowserRouter> */}
     </div>
   );
 }

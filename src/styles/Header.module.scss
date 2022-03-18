@@ -1,13 +1,20 @@
 .header {
-  padding: 20px;
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #003366;
   position: relative;
-
   .logoBox {
     .logo {
+      font-size: 25px;
       font-weight: 700;
+      .first {
+        color: #24ff24;
+      }
+      .second {
+        color: white;
+      }
     }
     .hamMenu {
       display: none;
@@ -19,17 +26,13 @@
     font-size: 20px;
     font-weight: 500;
     &:hover {
-      color: tomato;
+      color: #24ff24;
     }
   }
   .menuItems {
     display: flex;
     gap: 20px;
   }
-  // .add,
-  // .view {
-  //   display: none;
-  // }
 }
 @media screen and (max-width: 500px) {
   .header {
@@ -47,7 +50,6 @@
       width: 100%;
       .hamMenu {
         display: block;
-        // position: absolute;
         top: 20px;
         right: 20px;
         .ham {
@@ -65,7 +67,6 @@
         }
       }
     }
-
     .menuItems {
       flex-direction: column;
       a {

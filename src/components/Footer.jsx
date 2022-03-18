@@ -6,7 +6,6 @@ import {
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
-
 const Footer = () => {
   return (
     <div className={styles.footer}>

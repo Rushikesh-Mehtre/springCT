@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 20px;
   margin-top: auto;
   p {
     color: white;
+    margin: 0px;
   }
   .socialIcons {
     display: flex;
@@ -16,7 +17,7 @@
       color: white;
       cursor: pointer;
       &:hover {
-        color: tomato;
+        color: #24ff24;
       }
     }
   }
@@ -24,6 +25,7 @@
 @media screen and (max-width: 500px) {
   .footer {
     flex-direction: column;
+    padding: 10px 10px;
     p {
       margin: 0px;
       margin-bottom: 10px;
