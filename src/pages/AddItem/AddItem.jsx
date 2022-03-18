@@ -15,7 +15,7 @@ const AddItem = (props) => {
     message: "",
   });
   //eslint-disable-next-line
-  var namePattern = /^[A-Za-z]+$/;
+  var namePattern = /^[a-zA-Z ]+$/;
   //eslint-disable-next-line
   var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
